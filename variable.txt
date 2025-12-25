@@ -1,0 +1,14 @@
+1. variable naming syntax
+a. cant start with a number.
+b. can use special characters like $ or @
+c. cant use special keywoords like let or var.
+
+when we use let, we can change its value
+but when you use const, you cannot update its value
+
+let is used for creating a new variable, so when you update its value, you dont use let again.
+
+camelcasing
+club words together, start with lower case for first word and then use upper case for other following words.
+
+typeof tells us data type of variable.
