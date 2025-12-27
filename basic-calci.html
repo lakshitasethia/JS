@@ -8,36 +8,41 @@
   <body>
     <button
       onclick="calculation+='1';
+      localStorage.setItem('calculation',calculation);
       console.log(`${calculation}`);"
     >
       1
     </button>
     <button
       onclick="calculation+='2';
+      localStorage.setItem('calculation',calculation);
       console.log(`${calculation}`);"
     >
       2
     </button>
     <button
       onclick="calculation+='3';
+      localStorage.setItem('calculation',calculation);
       console.log(`${calculation}`);"
     >
       3
     </button>
     <button
       onclick="calculation+=' + ';
+      localStorage.setItem('calculation',calculation);
       console.log(`${calculation}`);"
     >
       +
     </button>
     <button
       onclick="calculation=eval(calculation);
+      localStorage.setItem('calculation',calculation);
       console.log(`${calculation}`);"
     >
       =
     </button>
     <script>
-      let calculation = "";
+      let calculation = localStorage.getItem('calculation') || "";
     </script>
   </body>
 </html>

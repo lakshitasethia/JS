@@ -7,15 +7,29 @@
   </head>
   <body>
     <script>
-      const product = {
-        name: "socks",
-        price: 1090,
+      // const product = {
+      //   name: "socks",
+      //   price: 1090,
+      // };
+      // console.log(product);
+      // console.log(product.name);
+      // console.log(product.price);
+      // // used to delete a property from an object
+      // delete product.price;
+      // console.log(product);
+
+      const product2 = {
+        "name": "shirt",
+        "delivery-time": "1 day",
+        "rating": {
+          "stars": 4.5,
+          "count": 87,
+        },
       };
-      console.log(product);
-      console.log(product.name);
-      console.log(product.price);
-      delete product.price;
-      console.log(product);
+      console.log(typeof product2);
+      //to find length of an object
+      console.log('hello'.length); //5
+      console.log('hello'.toUpperCase()); //HELLO
     </script>
   </body>
 </html>

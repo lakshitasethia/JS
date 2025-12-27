@@ -10,8 +10,22 @@
     <button onClick="playerMove('rock');">Rock</button>
     <button onClick="playerMove('paper');">Paper</button>
     <button onClick="playerMove('scissors');">Scissors</button>
+    <button onClick="resetScore();">Reset Score</button>
     <script>
       let computerChoice = "";
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };
+
+      function resetScore() {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem("score");
+      }
+
       function playerMove(playerMove) {
         let computerMove = Math.random();
 
@@ -49,8 +63,18 @@
           result = "Tie.";
         }
 
+        if (result === "You win.") {
+          score.wins += 1;
+        } else if (result === "You lose.") {
+          score.losses += 1;
+        } else if (result === "Tie.") {
+          score.ties += 1;
+        }
+
+        localStorage.setItem("score", JSON.stringify(score));
+
         alert(
-          `You picked ${playerMove}. Computer picked ${computerChoice}. ${result}`
+          `You picked ${playerMove}. Computer picked ${computerChoice}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
         );
       }
     </script>
