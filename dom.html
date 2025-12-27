@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="toggleButton();">Subscribe</button>
+    <script>
+      function toggleButton(){
+      if (document.querySelector("button").innerText === "Subscribe") {
+        document.querySelector("button").innerText = "Subscribed";
+      } else {
+        document.querySelector("button").innerText = "Subscribe";
+      }
+      }
+    </script>
+  </body>
+</html>
