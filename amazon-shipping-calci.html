@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="amazon.css">
   </head>
   <body>
     <h2>PLEASE ENTER THE COST IN CENTS ONLY.</h2>
@@ -13,13 +14,13 @@
     <input
       type="number"
       placeholder="Cost of order"
-      class="js-input"
+      class="js-input input-field"
       onkeydown="
     if(event.key==='Enter'){
       displayCost();
     }"
     />
-    <button onclick="displayCost();">Calculate</button>
+    <button onclick="displayCost();" class="calculate-button">Calculate</button>
     <p class="js-output"></p>
 
     <script>
