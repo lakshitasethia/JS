@@ -1,0 +1,45 @@
+body {
+  font-family: Arial;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: start;
+}
+
+.js-text,
+.js-date {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.add-button {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.delete-button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.display-to-do,
+.date-display {
+  font-size: 16px;
+  margin-top: 0;
+  line-height: 45px; /* Matches button height (35px) + margin (10px) */
+}

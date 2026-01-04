@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="amazon.css">
+    <link rel="stylesheet" href="amazon.css" />
   </head>
   <body>
     <h2>PLEASE ENTER THE COST IN CENTS ONLY.</h2>
@@ -22,19 +22,26 @@
     />
     <button onclick="displayCost();" class="calculate-button">Calculate</button>
     <p class="js-output"></p>
+    <p
+      class="error-message"
+      style="font-weight: bold; color: red; font-size: 25px;"
+    ></p>
 
     <script>
       function displayCost() {
         let inputElement = document.querySelector(".js-input");
         let cost = Number(inputElement.value);
 
-        if (cost < 4000) {
+        if (cost < 0) {
+          document.querySelector(".error-message").innerHTML =
+            "Error: cost cannot be less than $0.";
+        } else if (cost < 4000) {
           cost = (cost + 1000) / 100;
+          document.querySelector(".js-output").innerHTML = `$${cost}`;
         } else if (cost >= 4000) {
           cost = cost / 100;
+          document.querySelector(".js-output").innerHTML = `$${cost}`;
         }
-
-        document.querySelector(".js-output").innerHTML = `$${cost}`;
       }
     </script>
   </body>
