@@ -7,7 +7,7 @@ body {
   grid-template-columns: 200px 150px 100px;
   column-gap: 10px;
   row-gap: 10px;
-  align-items: start;
+  align-items: center;
 }
 
 .js-text,
@@ -24,6 +24,7 @@ body {
   padding: 10px 15px;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .delete-button {
