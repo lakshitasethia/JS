@@ -28,15 +28,14 @@ img {
   cursor: pointer;
 }
 
-.reset-button,
-.auto-play {
+.reset-button {
   margin-top: 8px;
   border: none;
   padding: 9px 12px;
   cursor: pointer;
 }
 
-.score {
+.score{
   font-size: 15px;
   font-weight: normal;
 }
