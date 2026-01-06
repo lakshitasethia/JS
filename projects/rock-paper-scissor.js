@@ -10,6 +10,25 @@ document.querySelector(
   ".js-result"
 ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
+let isAutoplaying = false;
+let intervalId;
+function autoPlay() {
+  if (!isAutoplaying) {
+    intervalId = setInterval(function () {
+      playerMove(["rock", "paper", "scissors"][Math.floor(Math.random() * 3)]);
+    }, 1000);
+    document.querySelector(".auto-play").innerHTML = "Stop Play";
+    isAutoplaying = true;
+  } else{
+    clearInterval(intervalId);
+    isAutoplaying = false;
+    document.querySelector(".auto-play").innerHTML = "Auto Play";
+    return;
+  }
+
+  document.querySelector(".auto-play").innerHTML = "Stop Play";
+}
+
 function resetScore() {
   score.wins = 0;
   score.losses = 0;
