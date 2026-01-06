@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Anonymous function - does not have a name, but does not support hoisiting. Can be written in any order unlike the traditional function
+      const function1 = function () {
+        console.log("Hello from an anonymous function!");
+      };
+
+      // Callback function - a function that is passed as an argument to another function and is executed after some operation is completed
+      function function2(callback) {
+        console.log("Function 2 is executing.");
+        callback();
+      }
+      function2(function () {
+        console.log("Hello callback function executed!");
+      });
+
+      // setTimeout function - executes a function after a specified delay
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000);
+
+      //setInterval function - executes a function repeatedly at specified intervals
+      setInterval(function () {
+        console.log("interval");
+      }, 3000);
+
+      console.log("next line");
+    </script>
+  </body>
+</html>
