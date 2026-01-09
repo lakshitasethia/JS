@@ -28,7 +28,8 @@ img {
   cursor: pointer;
 }
 
-.reset-button {
+.reset-button,
+.autoplay-button {
   margin-top: 8px;
   border: none;
   padding: 9px 12px;

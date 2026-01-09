@@ -10,7 +10,34 @@ document.querySelector(
   ".js-result"
 ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
-function resetScore() {
+document.body.addEventListener('keydown', (event) =>{
+  if(event.key === 'r'){
+    playerMove('rock');
+  }else if(event.key === 'p'){
+    playerMove('paper');
+  }else if(event.key === 's'){
+    playerMove('scissors');
+  }
+});
+
+let intervalId;
+let isAutoPlaying = false;
+
+const autoPlay = () => {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      playerMove(["rock", "paper", "scissors"][Math.floor(Math.random() * 3)]);
+    }, 1000);
+    isAutoPlaying = true;
+    document.querySelector(".autoplay-button").innerText = "Stop Play";
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    document.querySelector(".autoplay-button").innerText = "Auto Play";
+  }
+};
+
+const resetScore = () => {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
@@ -18,9 +45,9 @@ function resetScore() {
   document.querySelector(
     ".js-score"
   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-}
+};
 
-function playerMove(playerMove) {
+const playerMove = (playerMove) => {
   let computerMove = Math.random();
 
   if (computerMove < 1 / 3) {
@@ -72,4 +99,4 @@ function playerMove(playerMove) {
   document.querySelector(
     ".js-score"
   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-}
+};
