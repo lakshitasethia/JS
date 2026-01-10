@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const addNum = (array, num) => {
+        let newArray = [];
+        array.map((value) => {
+          newArray.push(value + num);
+        });
+        console.log(newArray);
+      };
+      addNum([1, 2, 3], 5);
+
+      const removeEgg = (foods) => {
+        let modifiedFoods = [];
+        let count=0;
+        foods.filter((value)=>{
+          if(value==='egg'&& count < 2){
+            count++;
+            return false;
+          } else {
+            modifiedFoods.push(value);
+            return true;
+          }
+        });
+        console.log(modifiedFoods);
+      }
+      removeEgg(["egg", "milk", "bread", "egg", "cheese", "egg"]);
+    </script>
+  </body>
+</html>
