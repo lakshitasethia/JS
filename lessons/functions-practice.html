@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    function convertTemperature(degrees,unit){
+      if(unit==='C'){
+        let fahrenheit = (degrees * 9/5) + 32;
+        return `${fahrenheit}°F`;
+      }
+      else if(unit==='F'){
+        let celsius = (degrees - 32) * 5/9;
+        return `${celsius}°C`;
+      }
+    }
+
+    console.log(convertTemperature(25,'C'));
+    console.log(convertTemperature(86,'F'));
+
+    // this will return numeric value but you will not get the unit
+    // function convertTemperature(degrees,unit){
+    //   let finalTemp='';
+    //   if(unit==='C'){
+    //     finalTemp = (degrees * 9/5) + 32;
+    //   }
+    //   else if(unit==='F'){
+    //     finalTemp = (degrees - 32) * 5/9;
+    //   }
+
+    //   return finalTemp;
+    // }
+    
+  </script>
+</body>
+</html>

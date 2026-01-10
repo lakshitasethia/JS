@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="ex10.css" />
+  </head>
+  <body>
+    <button class="btn game" onclick="toggleGame();">Gaming</button>
+    <button class="btn music" onclick="toggleMusic();">Music</button>
+    <button class="btn tech" onclick="toggleTech();">Tech</button>
+    <script>
+      function toggleGame() {
+        document.querySelector(".game").classList.add("is-toggled");
+        document.querySelector(".music").classList.remove("is-toggled");
+        document.querySelector(".tech").classList.remove("is-toggled");
+      }
+
+      function toggleMusic() {
+        document.querySelector(".music").classList.add("is-toggled");
+        document.querySelector(".game").classList.remove("is-toggled");
+        document.querySelector(".tech").classList.remove("is-toggled");
+      }
+
+      function toggleTech() {
+        document.querySelector(".tech").classList.add("is-toggled");
+        document.querySelector(".game").classList.remove("is-toggled");
+        document.querySelector(".music").classList.remove("is-toggled");
+      }
+    </script>
+  </body>
+</html>

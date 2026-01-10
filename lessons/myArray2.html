@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function myArraySwap(array) {
+        if (array.length < 2) return array;
+        const firstElement = array[0];
+        const lastElement = array.at(-1);
+        array[0] = lastElement;
+        array[array.length - 1] = firstElement;
+        return array;
+      }
+      console.log(myArraySwap([1, 2, 3, 4])); // Output: [4, 2, 3, 1]
+      console.log(myArraySwap(["a", "b", "c"])); // Output: ['c', 'b', 'a']
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link rel="stylesheet" href="dom.css">
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="toggleButton();" class="subscribe-button">Subscribe</button>
+    <script>
+      function toggleButton(){
+      if (document.querySelector("button").innerText === "Subscribe") {
+        document.querySelector("button").innerText = "Subscribed";
+        addclass = document.querySelector("button").classList.add("subscribed-button");
+      } else {
+        document.querySelector("button").innerText = "Subscribe";
+        removeclass = document.querySelector("button").classList.remove("subscribed-button");
+      }
+      }
+    </script>
+  </body>
+</html>
