@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .gaming-on , .music-on , .tech-on {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .gaming-on:hover,
+      .music-on:hover,
+      .tech-on:hover {
+        cursor: pointer;
+      }
+
+      .gaming-off ,
+      .music-off ,
+      .tech-off {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(230, 230, 230);
+        color: black;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .gaming-off:hover,
+      .music-off:hover,
+      .tech-off:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="toggle()" class="js-gaming gaming-off">Gaming</button>
+    <button onclick="toggle2()" class="js-music music-off">Music</button>
+    <button onclick="toggle3()" class="js-tech tech-off">Tech</button>
+    <script>
+      function toggle() {
+        if (
+          document.querySelector(".js-gaming").classList.contains("gaming-on")
+        ) {
+          document.querySelector(".js-gaming").classList.add("gaming-off");
+          document.querySelector(".js-gaming").classList.remove("gaming-on");
+        } else {
+          document.querySelector(".js-gaming").classList.remove("gaming-off");
+          document.querySelector(".js-gaming").classList.add("gaming-on");
+        }
+
+        if (
+          document.querySelector(".js-gaming").classList.contains("gaming-on")
+        ) {
+          document.querySelector(".js-music").classList.add("music-off");
+          document.querySelector(".js-music").classList.remove("music-on");
+          document.querySelector(".js-tech").classList.add("tech-off");
+          document.querySelector(".js-tech").classList.remove("tech-on");
+        } else {
+          document.querySelector(".js-gaming").classList.remove("gaming-off");
+          document.querySelector(".js-gaming").classList.add("gaming-on");
+        }
+      }
+
+      function toggle2() {
+        if (
+          document.querySelector(".js-music").classList.contains("music-on")
+        ) {
+          document.querySelector(".js-music").classList.add("music-off");
+          document.querySelector(".js-music").classList.remove("music-on");
+        } else {
+          document.querySelector(".js-music").classList.remove("music-off");
+          document.querySelector(".js-music").classList.add("music-on");
+        }
+
+        if (
+          document.querySelector(".js-music").classList.contains("music-on")
+        ) {
+          document.querySelector(".js-gaming").classList.add("gaming-off");
+          document.querySelector(".js-gaming").classList.remove("gaming-on");
+          document.querySelector(".js-tech").classList.add("tech-off");
+          document.querySelector(".js-tech").classList.remove("tech-on");
+        } else {
+          document.querySelector(".js-music").classList.remove("music-off");
+          document.querySelector(".js-music").classList.add("music-on");
+        }
+      }
+
+      function toggle3() {
+        if (document.querySelector(".js-tech").classList.contains("tech-on")) {
+          document.querySelector(".js-tech").classList.add("tech-off");
+          document.querySelector(".js-tech").classList.remove("tech-on");
+        } else {
+          document.querySelector(".js-tech").classList.remove("tech-off");
+          document.querySelector(".js-tech").classList.add("tech-on");
+        }
+
+        if (document.querySelector(".js-tech").classList.contains("tech-on")) {
+          document.querySelector(".js-gaming").classList.add("gaming-off");
+          document.querySelector(".js-gaming").classList.remove("gaming-on");
+          document.querySelector(".js-music").classList.add("music-off");
+          document.querySelector(".js-music").classList.remove("music-on");
+        } else {
+          document.querySelector(".js-tech").classList.remove("tech-off");
+          document.querySelector(".js-tech").classList.add("tech-on");
+        }
+      }
+    </script>
+  </body>
+</html>

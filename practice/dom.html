@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      *{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .subscribe-button{
+        background-color: black;
+        color: white;
+        border: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 20px;
+      }
+
+      .subscribe-button:hover{
+        cursor: pointer;
+      }
+
+      .subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .calculate-button{
+        background-color: green;
+        color: white;
+        border: none;
+        font-weight: bold;
+        padding: 10px 20px;
+      }
+
+      .calculate-button:hover{
+        cursor: pointer;
+      }
+
+      input{
+        padding: 8px 14px;
+      }
+
+      div p{
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-bottom: 40px">
+      <p>YouTube Subscribe Button</p>
+      <button class="js-subscribe subscribe-button" onclick="function1()">Subscribe</button>
+    </div>
+
+    <div>
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = +$10 shipping.</p>
+      <p>Orders over $40 = FREE shipping.</p>
+      <input
+        type="text"
+        name="cost"
+        id=""
+        placeholder="Cost of order"
+        class="js-cost"
+      />
+      <button class="js-calculate calculate-button" onclick="function2()">Calculate</button>
+      <p class="js-display-result"></p>
+    </div>
+    <script>
+      function function1() {
+        if (document.querySelector(".js-subscribe").innerHTML === "Subscribe") {
+          document.querySelector(".js-subscribe").innerHTML = "Subscribed";
+          document.querySelector(".js-subscribe").classList.add("subscribed");
+        } else {
+          document.querySelector(".js-subscribe").innerHTML = "Subscribe";
+          document.querySelector(".js-subscribe").classList.remove("subscribed");
+        }
+      }
+
+      const inputElement = document.querySelector(".js-cost");
+      function function2() {
+        let cost = Number(inputElement.value);
+        if (cost < 40) {
+          cost += 10;
+          document.querySelector(".js-display-result").innerHTML = `$${cost}`;
+        } else {
+          cost = cost;
+          document.querySelector(".js-display-result").innerHTML = `$${cost}`;
+        }
+      }
+
+      // I want the result to be displayed even if I hit the enter key instead of clicking the button.
+      inputElement.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          function2();
+        }
+      });
+
+      // also when user is typing in the input field, I want the result to be displayed in real time without having to click the button or hit the enter key.
+      inputElement.addEventListener("input", function () {
+        function2();
+      });
+    </script>
+  </body>
+</html>

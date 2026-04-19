@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .gaming-on{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(230, 230, 230);
+      color: black;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .gaming-on:hover{
+      cursor: pointer;
+    }
+
+    .gaming-off{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .gaming-off:hover{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="toggle();" class="js-gaming gaming-on">Gaming</button>
+  <script>
+    function toggle(){
+      if(document.querySelector('.js-gaming').classList.contains('gaming-on')){
+        document.querySelector('.js-gaming').classList.add('gaming-off');
+        document.querySelector('.js-gaming').classList.remove('gaming-on');
+      } else {
+        document.querySelector('.js-gaming').classList.remove('gaming-off');
+        document.querySelector('.js-gaming').classList.add('gaming-on');
+      }
+    }
+  </script>
+</body>
+</html>
